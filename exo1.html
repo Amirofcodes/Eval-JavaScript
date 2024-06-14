@@ -1,17 +1,49 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
-  <head>  
-    <meta charset=utf-8 />  
+  <head>
+    <meta charset="utf-8" />
     <title>Exercice 1</title>
     <script>
       function Init() {
-  
+        var googleLink = document.getElementById("google");
+        var newLink = document.getElementById("newlink");
+
+        googleLink.addEventListener("click", function () {
+          console.log("Google Link Attributes:");
+          console.log("href:", googleLink.getAttribute("href"));
+          console.log("hreflang:", googleLink.getAttribute("hreflang"));
+          console.log("rel:", googleLink.getAttribute("rel"));
+          console.log("target:", googleLink.getAttribute("target"));
+          console.log("type:", googleLink.getAttribute("type"));
+        });
+
+        var button = document.querySelector("button");
+        button.addEventListener("click", function () {
+          console.log("New Link Attributes:");
+          console.log("href:", newLink.getAttribute("href"));
+          console.log("hreflang:", newLink.getAttribute("hreflang"));
+          console.log("rel:", newLink.getAttribute("rel"));
+          console.log("target:", newLink.getAttribute("target"));
+          console.log("type:", newLink.getAttribute("type"));
+
+          newLink.setAttribute("href", "https://www.amirofcodes.com");
+        });
       }
-    </script>      
+    </script>
   </head>
-  <body onload="Init()">   
-    <p><a id="google" type="text/html" hreflang="fr-fr" rel="nofollow" target="_self" href="http://www.google.fr">Google</a></p>
-    <p><a id="newlink" >un nouveau lien</a></p>
+  <body onload="Init()">
+    <p>
+      <a
+        id="google"
+        type="text/html"
+        hreflang="fr-fr"
+        rel="nofollow"
+        target="_self"
+        href="http://www.google.fr"
+        >Google</a
+      >
+    </p>
+    <p><a id="newlink">un nouveau lien</a></p>
     <button>Afficher</button>
-  </body>    
+  </body>
 </html>

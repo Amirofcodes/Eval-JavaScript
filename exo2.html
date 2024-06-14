@@ -1,16 +1,34 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
-  <head>  
-    <meta charset=utf-8 />  
-    <title>Exercice 2</title>  
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercice 2</title>
     <script>
       function Init() {
-    
+        var link = document.querySelector("a[href='#']");
+        var strongElements = document.querySelectorAll("p strong");
+
+        link.addEventListener("mouseover", function () {
+          strongElements.forEach(function (element) {
+            element.style.color = "blue";
+          });
+        });
+
+        link.addEventListener("mouseout", function () {
+          strongElements.forEach(function (element) {
+            element.style.color = "black";
+          });
+        });
       }
     </script>
   </head>
-  <body onload="Init()">   
-    <p><a href="#">Modifier la couleur des éléments en gras du texte</a></p>   
-    <p><strong>Nous</strong> avons commencé <strong>à apprendre </strong> le Javascript <strong> cette semaine</strong>, ce qui va nous permettre <strong> de rendre</strong> dynamique nos sites <strong> internet</strong>.</p>  
-  </body>    
+  <body onload="Init()">
+    <p><a href="#">Modifier la couleur des éléments en gras du texte</a></p>
+    <p>
+      <strong>Nous</strong> avons commencé <strong>à apprendre </strong> le
+      Javascript <strong> cette semaine</strong>, ce qui va nous permettre
+      <strong> de rendre</strong> dynamique nos sites
+      <strong> internet</strong>.
+    </p>
+  </body>
 </html>
